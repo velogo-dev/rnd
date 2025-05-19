@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>WebKit Browser Test</title>
+      <style>
+            body {
+                  font-family: Arial, sans-serif;
+                  max-width: 800px;
+                  margin: 0 auto;
+                  padding: 20px;
+                  line-height: 1.6;
+            }
+
+            h1 {
+                  color: #333;
+                  text-align: center;
+                  margin-bottom: 30px;
+            }
+
+            .card {
+                  background-color: #f9f9f9;
+                  border-radius: 8px;
+                  padding: 20px;
+                  margin-bottom: 20px;
+                  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            button {
+                  background-color: #4CAF50;
+                  color: white;
+                  border: none;
+                  padding: 10px 15px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  font-size: 16px;
+            }
+
+            button:hover {
+                  background-color: #45a049;
+            }
+
+            #counter {
+                  font-weight: bold;
+                  font-size: 24px;
+            }
+      </style>
+</head>
+
+<body>
+      <h1>WebKit GTK Browser Example</h1>
+
+      <div class="card">
+            <h2>Welcome!</h2>
+            <p>This is a simple HTML page to test your WebKit GTK browser implementation. This page demonstrates basic
+                  HTML, CSS, and JavaScript functionality.</p>
+      </div>
+
+      <div class="card">
+            <h2>Interactive Element</h2>
+            <p>Click the button below to increment the counter: <span id="counter">0</span></p>
+            <button id="increment">Click Me!</button>
+      </div>
+
+      <div class="card">
+            <h2>Browser Features</h2>
+            <p>Your browser implementation includes:</p>
+            <ul>
+                  <li>Navigation controls (Back, Forward, Reload)</li>
+                  <li>Zoom controls</li>
+                  <li>File menu</li>
+                  <li>Local file loading</li>
+            </ul>
+      </div>
+
+      <script>
+            // Simple counter functionality
+            let count = 0;
+            const counterElement = document.getElementById('counter');
+            const button = document.getElementById('increment');
+
+            button.addEventListener('click', function () {
+                  count++;
+                  counterElement.textContent = count;
+            });
+
+            // Display current date and time
+            document.addEventListener('DOMContentLoaded', function () {
+                  const now = new Date();
+                  const dateString = now.toLocaleString();
+                  const footer = document.createElement('footer');
+                  footer.style.textAlign = 'center';
+                  footer.style.marginTop = '30px';
+                  footer.style.color = '#666';
+                  footer.innerHTML = `<p>Page loaded at: ${dateString}</p>`;
+                  document.body.appendChild(footer);
+            });
+      </script>
+</body>
+
+</html>
